@@ -23,12 +23,13 @@ class Shop {
 
     //Product methods
     void listProducts(); // list all products
-    Product buyProduct(Product const &product)
+    template <class ProductType>
+    Product buyProduct(ProductType const &product)
     { this->products.push_back(product);
 
       prods.push_back(nullptr);
-      prods.back() = new Product(product);
-      std::cout << ">>>>product " << (prods[prods.size() - 1])->getName() << " added; vector size: " << prods.size() << std::endl;
+      prods.back() = new ProductType(product);
+//      std::cout << ">>>>product " << (prods[prods.size() - 1])->getName() << " added; vector size: " << prods.size() << std::endl;
 
       this->numProducts++;
       return product;

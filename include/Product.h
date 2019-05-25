@@ -7,11 +7,11 @@
 class Product {
     public:
     Product (std::string name = "Something", int price = 100);
-    ~Product();
+    virtual ~Product();
     int changePrice(int newPrice);
     std::string getName();
     int getPrice();
-    std::string getInfo();
+    virtual std::string getInfo();
 
     //protected:
     int price;
