@@ -36,6 +36,7 @@ class Shop {
     std::string address;
     T1 capital;
     std::vector<Product> products;
+    std::vector<Product*> prods;
     int numProducts;
     Employee<T2> *employees;
     int numEmployees;

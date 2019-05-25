@@ -3,6 +3,8 @@
 #include "Shop.h"
 #include <algorithm>
 
+using namespace std;
+
 template <class T1, class T2>
 Shop<T1,T2>::Shop (std::string name, std::string address, T1 capital) {
     this->name = name;
@@ -16,6 +18,7 @@ Shop<T1,T2>::Shop (std::string name, std::string address, T1 capital) {
 template <class T1, class T2>
 Shop<T1,T2>::~Shop () {
     delete[] this->employees;
+    for (auto i = prods.begin(); i != prods.end(); ++i) delete *i;
     //std::cout<<"Shop " + name + " deleted.\n";   //Debugging
 }
 
@@ -130,6 +133,9 @@ void Shop<T1,T2>::listProducts() {
         for (auto it = this->products.begin(); it < this->products.end(); it++) {
             std::cout<<it->getInfo()<<"\n";
         }
+        for (auto it = this->prods.begin(); it < this->prods.end(); it++) {
+            std::cout<<(*it)->getInfo()<<"\n";
+        }
     }
     else {
         std::cout<<"There are no products yet.\n";
@@ -140,6 +146,11 @@ void Shop<T1,T2>::listProducts() {
 template <class T1, class T2>
 Product Shop<T1,T2>::buyProduct(Product const &product) {
     this->products.push_back(product);
+
+    prods.push_back(nullptr);
+    prods.back() = new Product(product);
+    cout << ">>>>product " << (prods[prods.size() - 1])->getName() << " added; vector size: " << prods.size() << endl;
+
     this->numProducts++;
     return product;
 }
@@ -150,6 +161,14 @@ int Shop<T1,T2>::sellProduct(std::string prod_name) {
 		if (it->getName() == prod_name) {
 			this->capital+=it->getPrice();
             it = this->products.erase(it);
+            return 1;
+		}
+	}
+	for (auto it = this->prods.begin(); it!= this->prods.end(); ++it) {
+		if ((*it)->getName() == prod_name) {
+			this->capital+=(*it)->getPrice();
+            delete *it;
+            prods.erase(it);
             return 1;
 		}
 	}
