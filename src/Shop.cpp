@@ -143,7 +143,7 @@ void Shop<T1,T2>::listProducts() {
 }
 
 
-template <class T1, class T2>
+/*template <class T1, class T2>
 Product Shop<T1,T2>::buyProduct(Product const &product) {
     this->products.push_back(product);
 
@@ -153,7 +153,7 @@ Product Shop<T1,T2>::buyProduct(Product const &product) {
 
     this->numProducts++;
     return product;
-}
+}*/
 
 template <class T1, class T2>
 int Shop<T1,T2>::sellProduct(std::string prod_name) {
