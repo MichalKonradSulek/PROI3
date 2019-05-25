@@ -13,7 +13,7 @@ class Product {
     int getPrice();
     virtual std::string getInfo();
 
-    //protected:
+    protected:
     int price;
     std::string name;
 };

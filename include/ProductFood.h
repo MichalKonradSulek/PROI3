@@ -5,7 +5,7 @@
 #include "Product.h"
 
 class ProductFood : public Product
-{ //protected:
+{ protected:
     unsigned expiryDate;
   public:
     ProductFood(std::string name = "Something", int price = 100, unsigned expiryDate = 2020);

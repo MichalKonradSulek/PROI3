@@ -38,7 +38,7 @@ class Shop {
 //    Shop operator+(Shop const &shop2);
 
 
-    //private:
+    protected:
     std::string name;
     std::string address;
     T1 capital;
