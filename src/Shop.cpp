@@ -130,9 +130,6 @@ template <class T1, class T2>
 void Shop<T1,T2>::listProducts() {
     std::cout<<"PRODUCTS\n";
     if (this->numProducts > 0) {
-        for (auto it = this->products.begin(); it < this->products.end(); it++) {
-            std::cout<<it->getInfo()<<"\n";
-        }
         for (vector<Product*>::iterator it = this->prods.begin(); it < this->prods.end(); it++) {
             std::cout<<(*it)->getInfo()<<"\n";
         }
@@ -157,14 +154,7 @@ Product Shop<T1,T2>::buyProduct(Product const &product) {
 
 template <class T1, class T2>
 int Shop<T1,T2>::sellProduct(std::string prod_name) {
-    for (auto it = this->products.begin(); it!= this->products.end(); ++it) {
-		if (it->getName() == prod_name) {
-			this->capital+=it->getPrice();
-            it = this->products.erase(it);
-            return 1;
-		}
-	}
-	for (vector<Product*>::iterator it = this->prods.begin(); it!= this->prods.end(); ++it) {
+    for (vector<Product*>::iterator it = this->prods.begin(); it!= this->prods.end(); ++it) {
 		if ((*it)->getName() == prod_name) {
 			this->capital+=(*it)->getPrice();
             delete *it;

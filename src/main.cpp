@@ -19,6 +19,8 @@ int main() {
 	sklep1.buyProduct(Product("Cola", 3));
 	sklep1.buyProduct(Product("Ziemniaki", 3));
 	sklep1.printInfo();
+	sklep1.sellProduct("Cola");
+	sklep1.printInfo();
 	Shop<int, long int> sklep2("Rumiak", "Rumia", 2000);
 	sklep2.hireEmployee(Employee<long int>("Zenon" ,18, 2300));
 	sklep2.buyProduct(Product("Banana", 5));
