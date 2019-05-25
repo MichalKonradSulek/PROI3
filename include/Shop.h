@@ -38,7 +38,7 @@ class Shop {
     int binProduct(std::string name);
 
     //operator + overload
-    Shop operator+(Shop const &shop2);
+//    Shop operator+(Shop const &shop2);
 
 
     //private:

@@ -23,8 +23,8 @@ int main() {
 	sklep2.hireEmployee(Employee<long int>("Zenon" ,18, 2300));
 	sklep2.buyProduct(Product("Banana", 5));
 	sklep2.printInfo();
-	Shop<int, long int> sklep3 = sklep1 + sklep2;
+/*	Shop<int, long int> sklep3 = sklep1 + sklep2;
 	sklep3.printInfo();
 	sklep3.sellProduct("Banana");
-	sklep3.printInfo();
+	sklep3.printInfo();*/
 }

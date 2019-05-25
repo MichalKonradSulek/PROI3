@@ -18,7 +18,7 @@ Shop<T1,T2>::Shop (std::string name, std::string address, T1 capital) {
 template <class T1, class T2>
 Shop<T1,T2>::~Shop () {
     delete[] this->employees;
-    for (auto i = prods.begin(); i != prods.end(); ++i) delete *i;
+    for (vector<Product*>::iterator i = prods.begin(); i != prods.end(); ++i) delete *i;
     //std::cout<<"Shop " + name + " deleted.\n";   //Debugging
 }
 
@@ -133,7 +133,7 @@ void Shop<T1,T2>::listProducts() {
         for (auto it = this->products.begin(); it < this->products.end(); it++) {
             std::cout<<it->getInfo()<<"\n";
         }
-        for (auto it = this->prods.begin(); it < this->prods.end(); it++) {
+        for (vector<Product*>::iterator it = this->prods.begin(); it < this->prods.end(); it++) {
             std::cout<<(*it)->getInfo()<<"\n";
         }
     }
@@ -164,7 +164,7 @@ int Shop<T1,T2>::sellProduct(std::string prod_name) {
             return 1;
 		}
 	}
-	for (auto it = this->prods.begin(); it!= this->prods.end(); ++it) {
+	for (vector<Product*>::iterator it = this->prods.begin(); it!= this->prods.end(); ++it) {
 		if ((*it)->getName() == prod_name) {
 			this->capital+=(*it)->getPrice();
             delete *it;
@@ -177,7 +177,7 @@ int Shop<T1,T2>::sellProduct(std::string prod_name) {
 }
 
 //opearator + overload
-template <class T1, class T2>
+/*template <class T1, class T2>
 Shop<T1,T2> Shop<T1,T2>::operator+ (const Shop<T1,T2> &shop2) {
     Shop<T1,T2> newShop(this->name, this->address, this->capital + shop2.capital);
     newShop.numEmployees = this->numEmployees + shop2.numEmployees;
@@ -196,7 +196,7 @@ Shop<T1,T2> Shop<T1,T2>::operator+ (const Shop<T1,T2> &shop2) {
             newShop.products.push_back(shop2.products.at(i - this->numProducts));
     }
     return newShop;
-}
+}*/
 
 template class Shop<int,int>;
 template class Shop<long int, int>;
