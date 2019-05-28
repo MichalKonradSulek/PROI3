@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include "Product.h"
+#include "ProductFood.h"
+#include "ProductTechnical.h"
 #include "Employee.h"
 #include "vector"
 template <class T1, class T2>  // T1 - capital "range", T2 - the highest salary "range", each can be short int, int or long int
@@ -24,13 +26,13 @@ class Shop {
     //Product methods
     void listProducts(); // list all products
     template <class ProductType>
-    Product buyProduct(ProductType const &product)
-    { prods.push_back(nullptr);
+    Product buyProduct(ProductType const &product);
+ /*   { prods.push_back(nullptr);
       prods.back() = new ProductType(product);
 //      std::cout << ">>>>product " << (prods[prods.size() - 1])->getName() << " added; vector size: " << prods.size() << std::endl;
       this->numProducts++;
       return product;
-    }
+    }*/
     int sellProduct(std::string prod_name);
     int binProduct(std::string name);
 

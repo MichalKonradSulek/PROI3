@@ -139,18 +139,15 @@ void Shop<T1,T2>::listProducts() {
     }
 }
 
-
-/*template <class T1, class T2>
-Product Shop<T1,T2>::buyProduct(Product const &product) {
-    this->products.push_back(product);
-
-    prods.push_back(nullptr);
-    prods.back() = new Product(product);
-    cout << ">>>>product " << (prods[prods.size() - 1])->getName() << " added; vector size: " << prods.size() << endl;
-
+template <class T1, class T2>
+template <class ProductType>
+Product Shop<T1,T2>::buyProduct(ProductType const &product)
+  { prods.push_back(nullptr);
+    prods.back() = new ProductType(product);
+//    std::cout << ">>>>product " << (prods[prods.size() - 1])->getName() << " added; vector size: " << prods.size() << std::endl;
     this->numProducts++;
     return product;
-}*/
+    }
 
 template <class T1, class T2>
 int Shop<T1,T2>::sellProduct(std::string prod_name) {
@@ -188,13 +185,16 @@ Shop<T1,T2> Shop<T1,T2>::operator+ (const Shop<T1,T2> &shop2) {
     return newShop;
 }*/
 
-template class Shop<int,int>;
-template class Shop<long int, int>;
+//template class Shop<int,int>;
+//template class Shop<long int, int>;
 template class Shop<int,long int>;
-template class Shop<short int, long int>;
-template class Shop<long int, short int>;
-template class Shop <int, short int>;
-template class Shop <short int, int>;
-template class Shop<short int, short int>;
-template class Shop<long int, long int>;
+template Product Shop<int, long int>::buyProduct<Product>(Product const &product);
+template Product Shop<int, long int>::buyProduct<ProductFood>(ProductFood const &product);
+template Product Shop<int, long int>::buyProduct<ProductTechnical>(ProductTechnical const &product);
+//template class Shop<short int, long int>;
+//template class Shop<long int, short int>;
+//template class Shop <int, short int>;
+//template class Shop <short int, int>;
+//template class Shop<short int, short int>;
+//template class Shop<long int, long int>;
 
