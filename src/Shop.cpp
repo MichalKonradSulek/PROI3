@@ -142,10 +142,16 @@ void Shop<T1,T2>::listProducts() {
 template <class T1, class T2>
 template <class ProductType>
 Product Shop<T1,T2>::buyProduct(ProductType const &product)
-  { prods.push_back(nullptr);
-    prods.back() = new ProductType(product);
-//    std::cout << ">>>>product " << (prods[prods.size() - 1])->getName() << " added; vector size: " << prods.size() << std::endl;
-    this->numProducts++;
+  { try
+    { prods.push_back(nullptr);
+      prods.back() = new ProductType(product);
+      this->numProducts++;
+    }
+    catch (bad_alloc& ba)
+    {
+      cerr << "bad_alloc caught in buyProduct: " << ba.what() << '\n';
+      if(prods.back() == nullptr) prods.pop_back();
+    }
     return product;
     }
 
