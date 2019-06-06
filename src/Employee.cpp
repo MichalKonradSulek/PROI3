@@ -3,9 +3,16 @@
 #include "Employee.h"
 
 template <class T>  Employee<T>::Employee(std::string name, int age, T salary) {
-    this->age = age;
+  try{    
+    if(age < 18) throw int(1);
+	this->age = age;
     this->salary = salary;
     this->name = name;
+  }
+  catch (int n)
+    {
+      cerr << "Error " << n << ": person under age - Emploee not added" << '\n';
+    }
 //  std::cout<<"Employee " + name + " created.\n";  //Debugging
 }
 template <class T> Employee<T>::~Employee() {

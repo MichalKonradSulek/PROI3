@@ -23,7 +23,7 @@ BOOST_AUTO_TEST_CASE( testChangePrice )
 {
     Product prod;
 	prod.changePrice(53);
-    BOOST_CHECK( prod.getPrice() == 53 );
+    BOOST_CHECK_EQUAL( prod.getPrice(), 53 );
 }
 BOOST_AUTO_TEST_CASE( testGetInfo )
 {
