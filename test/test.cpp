@@ -25,4 +25,9 @@ BOOST_AUTO_TEST_CASE( testChangePrice )
 	prod.changePrice(53);
     BOOST_CHECK( prod.getPrice() == 53 );
 }
+BOOST_AUTO_TEST_CASE( testGetInfo )
+{
+    Product prod;
+    BOOST_CHECK( prod.getInfo() == "--Name:Something --Price:100" );
+}
 BOOST_AUTO_TEST_SUITE_END()
