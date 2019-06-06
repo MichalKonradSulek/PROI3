@@ -8,8 +8,8 @@ class Employee {
     public:
     Employee(std::string name = "Worker", int age = 18, T salary = 2500);
     ~Employee();
-    std::string getName();
-    int getAge();
+    std::string getName() const;
+    int getAge() const;
     T getSalary();
     T setSalary(T& newSalary);
 

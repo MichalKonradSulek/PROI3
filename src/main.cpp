@@ -14,7 +14,7 @@ using namespace std;
 
 int main() {
 	Shop<int, long int> sklep1("Janbol", "Gdynia", 1000);
-	sklep1.hireEmployee(Employee<long int>("John", 18, 2500));
+	sklep1.hireEmployee(Employee<long int>("John", 17, 2500));
 	sklep1.hireEmployee(Employee<long int>("Mark", 20, 2000));
 	sklep1.buyProduct(ProductFood("Mleko", 2));
 	sklep1.buyProduct(Product("Cola", 3));

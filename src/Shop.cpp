@@ -47,6 +47,15 @@ int Shop<T1,T2>::payEmployees() {
 
 template <class T1, class T2>
 Employee<T2> Shop<T1,T2>::hireEmployee(Employee<T2> const &employee) {
+	try
+      {  
+    	if(employee.getAge() < 18) throw int(1);
+	  }
+	catch (int n)
+    {
+      std::cerr << "Error " << n << ": person " << employee.getName() << " under age - Emploee not added" << '\n';
+	  return employee;
+    }
     Employee<T2> *tmp_emp = this->employees;
     this->numEmployees++;
     this->employees = new Employee<T2>[this->numEmployees];
