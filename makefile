@@ -19,13 +19,17 @@ $(TARGET): $(OBJECTS)
 	@echo " Linking..."
 	@echo " $(CC) $^ -o $(TARGET) "; $(CC) $^ -o $(TARGET)
 
+tester: $(OBJECTS) $(BUILDDIR)/test.o
+	@mkdir -p $(TARGETDIR)
+	@echo " $(CC) $(BUILDDIR)/test.o $(BUILDDIR)/Product.o $(INC) -o $(TESTOUTPUT) $(TESTFLAGS)"; $(CC) $(BUILDDIR)/test.o $(BUILDDIR)/Product.o $(INC) -o $(TESTOUTPUT) $(TESTFLAGS)
+
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(BUILDDIR)
 	@echo " $(CC) $(CFLAGS) $(INC) -c -o $@ $<"; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
-tester:
-	@mkdir -p $(TARGETDIR)
-	@echo " $(CC) $(TESTFILE) -o $(TESTOUTPUT) $(TESTFLAGS)"; $(CC) $(TESTFILE) -o $(TESTOUTPUT) $(TESTFLAGS)
+$(BUILDDIR)/test.o: $(TESTFILE)
+	@mkdir -p $(BUILDDIR)
+	@echo " $(CC) $(INC) -c -o $(BUILDDIR)/test.o $(TESTFILE) $(TESTFLAGS)"; $(CC) $(INC) -c -o $(BUILDDIR)/test.o $(TESTFILE) $(TESTFLAGS)
 
 clean:
 	@echo " Cleaning..."; 
