@@ -1,7 +1,12 @@
-/* 	Jakub Kieżun
+/* 	Projekt 3 
+    created by:
+    Jakub Kieżun
  	300225
-	Wiktor Kuśmirek
-	Projekt 2
+    modified by:
+    Michal Sulek
+    259686
+	teacher:
+    Wiktor Kuśmirek
 */
 
 #include <iostream>

@@ -1,3 +1,11 @@
+/*  Projekt 3 
+    created by:
+    Michal Sulek
+    259686
+    teacher:
+    Wiktor Kuśmirek
+*/
+
 #ifndef PRODUCTFOOD
 #define PRODUCTFOOD
 

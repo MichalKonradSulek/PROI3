@@ -1,3 +1,14 @@
+/*  Projekt 3 
+    created by:
+    Jakub Kieżun
+    300225
+    modified by:
+    Michal Sulek
+    259686
+    teacher:
+    Wiktor Kuśmirek
+*/
+
 #ifndef PRODUCT_H
 #define PRODUCT_H
 

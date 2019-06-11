@@ -1,3 +1,11 @@
+/*  Projekt 3 
+    created by:
+    Jakub Kieżun
+    300225
+    teacher:
+    Wiktor Kuśmirek
+*/
+
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 

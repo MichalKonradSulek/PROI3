@@ -1,3 +1,14 @@
+/* 	Projekt 3 
+    created by:
+    Jakub Kieżun
+ 	300225
+    modified by:
+    Michal Sulek
+    259686
+	teacher:
+    Wiktor Kuśmirek
+*/
+
 #include <iostream>
 #include <string>
 #include "Shop.h"

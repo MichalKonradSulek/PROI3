@@ -1,3 +1,11 @@
+/* 	Projekt 3 
+    created by:
+    Michal Sulek
+    259686
+	teacher:
+    Wiktor Kuśmirek
+*/
+
 #include <iostream>
 #include <sstream>
 #include "ProductFood.h"

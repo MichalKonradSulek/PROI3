@@ -1,3 +1,11 @@
+/* 	Projekt 3
+    created by:
+    Jakub Kieżun
+ 	300225
+	teacher:
+    Wiktor Kuśmirek
+*/
+
 #include <iostream>
 #include <string>
 #include "Employee.h"
